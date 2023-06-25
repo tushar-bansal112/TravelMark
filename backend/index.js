@@ -2,7 +2,7 @@ const express = require('express')
 const userRoute = require("./routes/Users");
 const pinRoute = require("./routes/Pins");
 const sequelize = require("./config/database");
-
+const PORT=process.env.PORT || 8080
 const app = express()
 
 
@@ -22,6 +22,6 @@ sequelize
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
 
-app.listen(8080,()=>{
+app.listen(PORT,()=>{
     console.log("Backend Server is running!")
 })
